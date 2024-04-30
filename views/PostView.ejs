@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Image Posts - Post</title>
+
+    <!-- CSS Stuff -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="icon" href="/images/tofuPancake.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbarContent">
+            <div class="navbarHome">
+                <a href="/">
+                <img src="/images/tofuPancake.png" alt="Website Logo">
+                </a>
+            </div>
+
+            <div class="navbarLinks">
+                <% if(currentUserID==null) {%>
+                    <div class="navbarEntry">
+                        <a href="/register">
+                            <p>Sign Up</p>
+                        </a>
+                    </div>
+                    <div class="navbarEntry">
+                        <a href="/login">
+                            <p>Login</p>
+                        </a>
+                    </div>
+                    <% } else {%>
+                        <% if(currentUserID != null) {%>
+                        <div class="navbarEntryNoHover">
+                            <p>Welcome, <%= currentUsername %>!</p>
+                        </div>
+                        <% } %>
+                        <div class="navbarEntry">
+                            <a href="/post/create">
+                                <p>New Post</p>
+                            </a>
+                        </div>
+                        <div class="navbarEntry">
+                            <a href="/logout">
+                                <p>Logout</p>
+                            </a>
+                        </div>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post -->
+    <div class="container">
+        <div class="post">
+            <div class="postPadding">
+                <!-- Post Entry 1 -->
+                    <div class="postEntry">
+                        <div class="postEntryPadding">
+                            <div class="postEntryImage">
+                                <img src="/uploads/processed/<%= post[0].post_image %>" alt="PostContent">
+                            </div>
+                            <div class="postEntryCaption">
+                                <h3>
+                                    <%= post[0].post_caption %>
+                                </h3>
+                                <div class="postEntryCaptionDescription">
+                                    <p class="description">
+                                        Submitted by <%= post[0].account_name %> - <%= post[0].post_update_date %>
+                                    </p>
+                                    <hr>
+                                </div>
+                                <% if(post[0].post_account_id==currentUserID) {%>
+                                    <div class="postEntryOptions">
+                                        <div class="postEntryOptionMenu">
+                                            <a href="/post/update/<%= post[0].post_id %>"><button>Update</button></a>
+                                        </div>
+                                        <div class="postEntryOptionMenu">
+                                            <form action="/post/delete" method="post">
+                                                <input type="hidden" name="id" value="<%= post[0].post_id %>" />
+                                                <button type="submit">Delete</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comment -->
+    <div class="modal">
+        <div class="modalPadding">
+            <div class="modalTitle">
+                <h2>Add Comment</h2>
+            </div>
+            <div class="modalForm">
+                <form action="">
+                    <textarea type="text" id="comment" name="comment" value="" rows="5"
+                        placeholder="Type here!"></textarea>
+                    <input class="submitButton" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modalBackground">
+        <p>&nbsp;</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Christofer Alvin - for TCD Submission - 2024</p>
+    </div>
+
+</body>
+
+</html>

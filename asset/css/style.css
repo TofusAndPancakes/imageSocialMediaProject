@@ -1,0 +1,764 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar {
+    width: Calc(100% - 30px);
+    min-width: 240px;
+    height: 54px;
+    position: relative;
+    float: left;
+
+    background-color: #404040;
+
+    padding: 10px 15px;
+
+    color: #ffffff;
+
+    margin-bottom: 20px;
+}
+
+.navbarContent {
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbarHome {
+    width: auto;
+    min-height: 48px;
+
+    position: relative;
+    float: left;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbarHome img {
+    width: auto;
+    max-height: 48px;
+}
+
+.navbarLinks {
+    width: auto;
+    min-height: 48px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbarEntry {
+    padding: 10px 15px;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    display: block;
+}
+
+.navbarEntry:hover {
+    text-decoration: underline;
+}
+
+.navbarEntry a {
+    color: #ffffff;
+}
+
+.navbarEntryNoHover {
+    padding: 10px 15px;
+    
+    text-decoration: none;
+    cursor: default;
+
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .navbarEntryNoHover {
+        display: none;
+    }
+}
+
+.container {
+    width: 100%;
+    min-width: 240px;
+    height: auto;
+    min-height: calc(100vh - 178px);
+
+    position: relative;
+    float: left;
+}
+
+.containerPadding {
+    width: 1140px;
+    height: auto;
+    position: relative;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 1400px) {
+    .containerPadding {
+        width: 980px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .containerPadding {
+        width: Calc(100% - 30px);
+        padding: 15px;
+    }
+}
+
+.post {
+    width: 1140px;
+    height: auto;
+    position: relative;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.postHeader {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.postHeaderTitle {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+}
+
+.postHeaderSubtitle {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+}
+
+.postPadding {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+
+    margin: 20px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 1400px) {
+    .post {
+        width: 980px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .post {
+        width: Calc(100% - 30px);
+        padding: 15px;
+    }
+}
+
+.postEntry {
+    width: 750px;
+    height: auto;
+    position: relative;
+    float: left;
+
+    background-color: #404040;
+
+    border-radius: 5px;
+    overflow: hidden;
+
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 798px) {
+    .postEntry {
+        width: Calc(100% - 30px);
+        margin: 0 15px;
+        margin-bottom: 20px;
+    }
+}
+
+.postEntryPadding {
+    width: calc(100% - 20px);
+    height: auto;
+    position: relative;
+    float: left;
+
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.postEntryImage {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+
+    background-color: #ffffff;
+    overflow: hidden;
+
+    margin-bottom: 15px;
+
+    border-radius: 5px;
+
+    object-fit: cover;
+}
+
+.postEntryImage img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.postEntryButton {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: 10px;
+}
+
+.postButtonLike {
+    width: auto;
+    height: 30px;
+
+    margin: 5px;
+}
+
+.postButtonLike img {
+    width: auto;
+    height: 30px;
+}
+
+.postButtonComment {
+    width: auto;
+    height: 30px;
+
+    margin: 5px;
+}
+
+.postButtonComment img {
+    width: auto;
+    height: 30px;
+}
+
+.postEntryCaption {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+
+    color: #FFFFFF;
+
+    margin-bottom: 10px;
+}
+
+p.description {
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.postEntryOptions {
+    width: calc(100% - 20px);
+    height: auto;
+    position: relative;
+    float: left;
+
+    background-color: #ffffff;
+    overflow: hidden;
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.postEntryOptionMenu {
+    padding: 2px;
+    
+    border-radius: 5px;
+}
+
+.postEntryOptionMenu button {
+    background-color: #404040;
+    border: none;
+    color: #ffffff;
+    
+    padding: 10px 15px;
+    border-radius: 5px;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.postEntryOptionMenu button:hover{
+    text-decoration: underline;
+}
+
+.postEntryComment {
+    width: calc(100% - 20px);
+    height: auto;
+    position: relative;
+    float: left;
+
+    background-color: #ffffff;
+    overflow: hidden;
+
+    padding: 10px;
+
+    border-radius: 5px;
+}
+
+.postCommentTitle {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+
+    margin-bottom: 10px;
+}
+
+p.title {
+    font-weight: 700;
+}
+
+.postComment {
+    width: calc(100% - 40px);
+    height: auto;
+    position: relative;
+    float: left;
+
+    background-color: #DDDDDD;
+    overflow: hidden;
+
+    margin-left: 30px;
+    padding: 5px;
+
+    border-radius: 5px;
+}
+
+.postComment p {
+    font-size: 14px;
+}
+
+.postComment p.description {
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.formDefault {
+    width: 750px;
+    height: auto;
+    position: relative;
+    float: left;
+
+    background-color: #404040;
+
+    border-radius: 5px;
+    overflow: hidden;
+
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 798px) {
+    .formDefault {
+        width: Calc(100% - 30px);
+        margin: 0 15px;
+        margin-bottom: 20px;
+    }
+}
+
+.formDefaultPadding {
+    width: calc(100% - 20px);
+    height: auto;
+    position: relative;
+    float: left;
+
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formHeader {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+
+    color: #FFFFFF;
+
+    margin-bottom: 10px;
+}
+
+.formContent {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+
+    color: #FFFFFF;
+
+    margin-bottom: 10px;
+}
+
+.formContent form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.formContentEntry {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+}
+
+.formContent hr {
+    margin-bottom: 5px;
+}
+
+p.formText {
+    font-weight: 700;
+}
+
+.formContent input {
+    height: 24px;
+    border-radius: 5px;
+
+    margin-bottom: 10px;
+}
+
+.formContent input.miscButton {
+    background-color: #ffffff;
+    border: none;
+    color: #404040;
+
+    width: calc(100% - 30px);
+    height: auto;
+
+    text-align: left;
+
+    padding: 10px 15px;
+    border-radius: 5px;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.formContent input.miscButton:hover {
+    text-decoration: underline;
+}
+
+.formContent input.submitButton {
+    background-color:#ffffff;
+    border: none;
+    color: #404040;
+
+    height: auto;
+
+    padding: 10px 15px;
+    border-radius: 5px;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.formContent input.submitButton:hover {
+    text-decoration: underline;
+}
+
+.formContentEntryImage {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+}
+
+.formContentEntryImage img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+input.formTextEntry {
+    width: calc(100% - 15px);
+    height: auto;
+
+    font-size: 16px;
+    padding: 5px 5px;
+}
+
+.modal {
+    width: 500px;
+    height: auto;
+    position: fixed;
+
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+
+    /* Highest Z Index */
+    z-index: 4;
+
+    background-color: #5B5B5B;
+    border-radius: 5px;
+
+    color: #FFFFFF;
+
+    /* Animation */
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: visibility .5s, opacity .5s;
+    
+}
+
+@media (max-width: 768px) {
+    .modal {
+        width: calc(100% - 30px);
+    }
+}
+
+.modalPadding {
+    width: calc(100% - 20px);
+    height: auto;
+    position: relative;
+    float: left;
+
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modalTitle {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+
+    margin-bottom: 10px;
+}
+
+.modalForm {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+
+    margin-bottom: 10px;
+}
+
+.modalForm textarea {
+    width: 100%;
+    height: auto;
+
+    border-radius: 5px;
+
+    margin-bottom: 10px;
+}
+
+.modalForm input.submitButton {
+    width: auto;
+    height: auto;
+
+    padding: 5px;
+    border-radius: 5px;
+
+    font-family: "Heebo", Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 3;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    overflow: hidden;
+
+    /* Animation */
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: visibility .5s, opacity .5s;
+}
+
+.footer {
+    width: Calc(100% - 30px);
+    min-width: 240px;
+    height: 64px;
+    position: relative;
+    float: left;
+
+    background-color: #404040;
+
+    padding: 10px 15px;
+
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.messageDefault {
+    width: 750px;
+    height: auto;
+    position: relative;
+    float: left;
+
+    background-color: #be4f4f;
+
+    border-radius: 5px;
+    overflow: hidden;
+
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 798px) {
+    .messageDefault {
+        width: Calc(100% - 30px);
+        margin: 0 15px;
+        margin-bottom: 20px;
+    }
+}
+
+.messageDefaultPadding {
+    width: calc(100% - 20px);
+    height: auto;
+    position: relative;
+    float: left;
+
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.messageHeader {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+
+    color: #FFFFFF;
+
+    margin-bottom: 10px;
+}
+
+h3 .messageDefault {
+    padding-bottom: 5px;
+}
+
+/* Breakpoints */
+@media (max-width: 1400px) {}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 375px) {}
+
+
+p {
+    font-family: "Raleway", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.artist_bio_link p {
+    font-size: 14px;
+}
+
+h1 {
+    font-family: "Heebo", Arial, sans-serif;
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: "Heebo", Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+h3 {
+    font-family: "Heebo", Arial, sans-serif;
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: bold;
+}

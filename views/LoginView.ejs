@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Image Posts - Login</title>
+
+    <!-- CSS Stuff -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="icon" href="/images/tofuPancake.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbarContent">
+            <div class="navbarHome">
+                <a href="/">
+                    <img src="/images/tofuPancake.png" alt="Website Logo">
+                </a>
+            </div>
+
+            <div class="navbarLinks">
+                <% if(currentUserID==null) {%>
+                    <div class="navbarEntry">
+                        <a href="/register">
+                            <p>Sign Up</p>
+                        </a>
+                    </div>
+                    <div class="navbarEntry">
+                        <a href="/login">
+                            <p>Login</p>
+                        </a>
+                    </div>
+                    <% } else {%>
+                    <% if(currentUserID !=null) {%>
+                        <div class="navbarEntryNoHover">
+                            <p>Welcome, <%= currentUsername %>!</p>
+                        </div>
+                        <% } %>
+                        <div class="navbarEntry">
+                            <a href="/post/create">
+                                <p>New Post</p>
+                            </a>
+                        </div>
+                    <div class="navbarEntry">
+                        <a href="/logout">
+                            <p>Logout</p>
+                        </a>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login -->
+    <div class="container">
+        <div class="containerPadding">
+
+        <!-- Error Messages -->
+        <% if ( message.length> 0 ) { %>
+            <div class="messageDefault">
+                <div class="messageDefaultPadding">
+                    <div class="messageHeader">
+                        <h3>Warnings!</h3>
+                        <% for(var i=0; i < message.length; i++) {%>
+                            <div class="postMessagesSection">
+                                <p>
+                                    <%= message[i] %>
+                                </p>
+                            </div>
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+            <div class="formDefault">
+                <div class="formDefaultPadding">
+                    <div class="formHeader">
+                        <div class="formTitle">
+                            <h1>Login</h1>
+                        </div>
+                        <div class="formSubtitle">
+                            <p>Login for existing users!</p>
+                        </div>
+                    </div>
+                    <div class="formContent">
+                        <form action="/login" method="POST">
+                            <div class="formContentEntry">
+                                <label for="email">
+                                    <p>Email</p>
+                                    <hr>
+                                </label>
+                                <input class="formTextEntry" type="text" id="email" name="email" value="" placeholder="Email">
+                            </div>
+                            <div class="formContentEntry">
+                                <label for="password">
+                                    <p>Password</p>
+                                    <hr>
+                                </label>
+                                <input class="formTextEntry" type="password" id="password" name="password">
+                            </div>
+                            <input class="submitButton" type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Christofer Alvin - for TCD Submission - 2024</p>
+    </div>
+
+
+</body>
+
+</html>
