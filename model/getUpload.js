@@ -38,9 +38,9 @@ export function uploadImage(image, user) {
                 image.mv(imageDestinationPath).then(() => {
                     return new Promise((resolve, reject) => {
                         sharp(imageDestinationPath).resize(750).toFile(resizedImagePath).then(() => resolve(imageDestinationPath));
-                    });
+                    }).then(() => resolve(imageNewName));
                 });
-                resolve(imageNewName);
+                
             } catch (error) {
                 reject("Upload Failure");
             } 

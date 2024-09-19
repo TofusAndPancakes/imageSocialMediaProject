@@ -146,8 +146,8 @@ export async function getQueryPost(id) {
     }
 
     try {
-        const response = await qb.select('*').where({ post_id: post_id })
-            .get('post');
+        const response = await qb.select('p.post_id, p.post_image, p.post_caption, p.post_account_id, p.post_update_date, a.account_name').from('post p').join('account a', 'a.account_id=p.post_account_id').where({ post_id: post_id })
+            .get();
         return response;
 
     } catch (error) {
